@@ -1,0 +1,35 @@
+#登录操作多条用例
+- #测试用例1
+  url: &a /account/sLogin
+  method: &b post
+
+
+- detail: 用户名正确,密码正确
+  data:
+    username: th0479
+    password: 11774
+  resp:
+    code: 2000
+    msg: 成功
+
+- #测试用例2
+#  url: *a
+#  method: post
+  detail: 用户名正确,密码错误
+  data:
+    username: th0479
+    password: 11212
+  resp:
+    code: 9999
+    msg: 输入的密码错误
+
+- #测试用例3
+#  url: *a
+#  method: post
+  detail: 用户名错误,密码错误
+  data:
+    username: th111
+    password: 12222
+  resp:
+    code: 9999
+    msg: 该用户不存在
